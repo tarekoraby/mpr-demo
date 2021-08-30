@@ -15,7 +15,7 @@
 	</prerequisites>
 
 	<properties>
-		<vaadin.version>14.4.10</vaadin.version>
+		<vaadin.version>14.6.8</vaadin.version>
 		<vaadin8.version>8.12.4</vaadin8.version>
 		<vaadin.plugin.version>8.12.4</vaadin.plugin.version>
 		<jetty.plugin.version>9.4.38.v20210224</jetty.plugin.version>

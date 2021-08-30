@@ -1,6 +1,8 @@
 package com.example.mpr;
 
+import com.vaadin.flow.component.contextmenu.ContextMenu;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.router.Route;
 import com.vaadin.mpr.LegacyWrapper;
 import com.vaadin.mpr.core.HasLegacyComponents;
@@ -17,8 +19,6 @@ public class MyUI extends Div implements HasLegacyComponents {
     public MyUI() {
         final VerticalLayout layout = new VerticalLayout();
 
-        add(new LegacyWrapper(layout));
-
         final TextField name = new TextField();
         name.setCaption("Type your name here:");
 
@@ -29,5 +29,16 @@ public class MyUI extends Div implements HasLegacyComponents {
         });
 
         layout.addComponents(name, button);
+
+        LegacyWrapper wrapper = new LegacyWrapper(layout);
+        add(wrapper);
+
+        ContextMenu contextMenu = new ContextMenu();
+
+        contextMenu.setTarget(wrapper);
+
+        Span message = new Span("-");
+        contextMenu.addItem("First menu item",
+                e -> message.setText("Clicked on the first item"));
     }
 }
